@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>gossip_parent</artifactId>
+        <groupId>com.itheima</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>gossip_wordcount_storm</artifactId>
+
+    <!--
+        打一个瘦包就行，如何要用到依赖就得打胖包，这里我们不需要storm-core依赖，因为Tomcat里面已经有了
+        说一下scope的几个范围：
+        complie:默认值 编译和运行都需要
+        Runtime：运行时有效
+        test：测试时（编译和运行）需要
+        provided：编译的时候需要，在打包的时候不需要
+    -->
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-core</artifactId>
+            <version>1.1.1</version>
+           <!-- <scope>provided</scope>  本地运行要删掉-->
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-jdbc</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <!-- mysql驱动包 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.38</version>
+        </dependency>
+        <!-- google工具类 -->
+        <dependency>
+            <groupId>com.google.collections</groupId>
+            <artifactId>google-collections</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
